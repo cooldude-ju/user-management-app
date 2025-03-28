@@ -41,6 +41,19 @@ const Users = () => {
     }
   };
 
+    const handleSubmit = async (values) => {
+    try {
+      if (selectedUser) {
+        await axios.put(`https://reqres.in/api/users/${selectedUser.id}`, values);
+        setUsers(users.map(user => user.id === selectedUser.id ? { ...user, ...values } : user));
+        setMessage('User updated successfully');
+      }
+      setOpenForm(false);
+    } catch (err) {
+      setMessage('Error updating user');
+    }
+  };
+
   return (
     <Container>
       <Button onClick={logout} sx={{ my: 2 }} variant="contained" color="error">
@@ -75,6 +88,7 @@ const Users = () => {
         open={openForm}
         user={selectedUser}
         onClose={() => setOpenForm(false)}
+        onSubmit={handleSubmit}
       />
 
       <Snackbar open={!!message} onClose={() => setMessage("")}>
