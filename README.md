@@ -19,6 +19,12 @@ This is a **User Management Application** built using **React.js**. The app allo
 
 ---
 
+## Live Demo
+
+Check out the live version of the app here: **[User Management App](https://user-management-app-blue.vercel.app)**
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -52,6 +58,8 @@ Make sure you have the following installed:
    This will launch the frontend at **[http://localhost:3000/](http://localhost:3000/)**.
 
 ---
+
+
 
 ## Search Feature: Searching Only on the Current Page
 
